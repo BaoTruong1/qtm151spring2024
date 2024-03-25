@@ -36,7 +36,7 @@ panel on the left:
 
 Delete existing table
 -- SQLBook: Code
--- Active: 1698674191041@@127.0.0.1@5432@postgres
+-- Active: 1710939792892@@127.0.0.1@5432@postgres
 -- If the table already exists we can drop it:
 -- If it doesn't exist nothing happens
 -- System commands are in upper case and user defined
@@ -49,6 +49,7 @@ DROP TABLE IF EXISTS drivers;
 
 Create empty table from codebook
 -- SQLBook: Code
+-- Active: 1710939792892@@127.0.0.1@5432@postgres@public
 -- Create empty TABLE called "drivers"
 -- This example has five arguments separated by a comma
 -- that contain the "column_name" and "column_type", respectively
@@ -64,6 +65,7 @@ CREATE TABLE drivers(
 
 Add rows to table
 -- SQLBook: Code
+-- Active: 1710939792892@@127.0.0.1@5432@postgres@public
 -- "INSET INTO" adds rows with VALUES ... to the bottom of the table
 -- In SQL different lines need to be separated by a semicolon ";"
 -- You write system commands in capital letters to easily distinguish
@@ -85,6 +87,7 @@ View the table in the VSC "Database" Panel
 $\qquad$ <img src="figures/view_table_sql.png" alt="drawing" width="350"/>
 
 -- SQLBook: Code
+-- Active: 1710939792892@@127.0.0.1@5432@postgres@public
 -- In SQL, a set of tables is called a "Schema"
 -- Click "refresh" to see changes
 -- The pencil button edits column attributes
@@ -102,6 +105,7 @@ Try it yourself!
 
 INSERT INTO drivers VALUES (5, 'Max Verstappen', 'Dutch', 51);
 INSERT INTO drivers VALUES (6, 'Juan Pablo Montoya', 'Colombian', 6);
+INSERT INTO drivers VALUES (7, 'Bao Truong', 'Vietnamese', 9)
 
 -- SQLBook: Markup
 # <span style="color:darkblue"> II. Dataset Operations </span>
@@ -138,7 +142,8 @@ WHERE nationality = 'United States';
 -- Evaluate AND conditions
 SELECT * FROM drivers
 WHERE (driver_id = 2);
-
+SELECT * FROM drivers
+WHERE nationality = 'German' AND driver_id=2;
 -- SQLBook: Markup
 <font size="5"> 
 
